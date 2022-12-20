@@ -39,7 +39,7 @@ const GlobalHeaderRight: React.FC = () => {
       <span
         className={styles.action}
         onClick={() => {
-          window.open('https://github.com/DylanAlloy/digits-ui/issues');
+          window.open('https://github.com/DylanAlloy/digits/issues');
         }}
       >
         <QuestionCircleOutlined />

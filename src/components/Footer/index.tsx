@@ -40,7 +40,7 @@ const Footer: React.FC = () => {
           {
             key: 'github',
             title: <GithubOutlined />,
-            href: 'https://github.com/DylanAlloy/digits-ui',
+            href: 'https://github.com/DylanAlloy/digits',
             blankTarget: true,
           },
           {
