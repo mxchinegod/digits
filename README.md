@@ -11,7 +11,7 @@ DigitsUI is a highly configurable and ML-leveraged quantitative analysis platfor
 <img src="./3.0.0-beta.png">
 <hr>
 
-## 📝 Code Properties ✨ ![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat) ![npm build](https://github.com/DylanAlloy/digits-ui/actions/workflows/node.js.yml/badge.svg?event=push) ![docker build](https://github.com/DylanAlloy/digits-ui/actions/workflows/docker.yml/badge.svg?event=push) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
+## 📝 Code Properties ✨ ![start with why](https://img.shields.io/badge/start%20with-why%3F-brightgreen.svg?style=flat) ![npm build](https://github.com/DylanAlloy/digits/actions/workflows/node.js.yml/badge.svg?event=push) ![docker build](https://github.com/DylanAlloy/digits/actions/workflows/docker.yml/badge.svg?event=push) ![contributions welcome](https://img.shields.io/badge/contributions-welcome-brightgreen.svg?style=flat) [![License: CC BY-NC 4.0](https://img.shields.io/badge/License-CC_BY--NC_4.0-lightgrey.svg)](https://creativecommons.org/licenses/by-nc/4.0/)
 
 ##### The below tools work together in a stack. There is an extensive API and a user model that uses local tokens to keep user sessions authenticated.
 
