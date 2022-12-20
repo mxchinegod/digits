@@ -1,0 +1,533 @@
+{
+  "info": {
+    "_postman_id": "dbcb47ce-3a7a-4e2d-8094-84a49f8b7683",
+    "name": "Digits",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "_exporter_id": "23969549"
+  },
+  "item": [
+    {
+      "name": "api-main",
+      "item": [
+        {
+          "name": "Dark Pool",
+          "item": [
+            {
+              "name": "spCompare",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:3000/api/altdata/darkpool",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "altdata", "darkpool"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "NewsAPI",
+          "item": [
+            {
+              "name": "everything",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"query\":\"tesla\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/altdata/news",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "altdata", "news"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "TDAAPI",
+          "item": [
+            {
+              "name": "options",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"symbol\":\"tsla\"\n    , \"type\": \"CALL\"\n    , \"strikeCount\": \"14\"\n    , \"fromDate\": \"2022-01-01\"\n    , \"toDate\": \"2022-12-31\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/tdadata/options",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "tdadata", "options"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "volatility",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"symbol\":\"tsla\"\n    , \"type\": \"CALL\"\n    , \"strikeCount\": \"14\"\n    , \"fromDate\": \"2022-01-01\"\n    , \"toDate\": \"2022-12-31\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/tdadata/volatility",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "tdadata", "volatility"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "MLAPI",
+          "item": [
+            {
+              "name": "Summarize",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"query\": \"New York (CNN)When Liana Barrientos was 23 years old, she got married in Westchester County, New York. A year later, she got married again in Westchester County, but to a different man and without divorcing her first husband.Only 18 days after that marriage, she got hitched yet again. Then, Barrientos declared \\\"I do\\\" five more times, sometimes only within two weeks of each other.In 2010, she married once more, this time in the Bronx. In an application for a marriage license, she stated it was her \\\"first and only\\\" marriage.Barrientos, now 39, is facing two criminal counts of \\\"offering a false instrument for filing in the first degree,\\\" referring to her false statements on the2010 marriage license application, according to court documents.Prosecutors said the marriages were part of an immigration scam.On Friday, she pleaded not guilty at State Supreme Court in the Bronx, according to her attorney, Christopher Wright, who declined to comment further.After leaving court, Barrientos was arrested and charged with theft of service and criminal trespass for allegedly sneaking into the New York subway through an emergency exit, said DetectiveAnnette Markowski, a police spokeswoman. In total, Barrientos has been married 10 times, with nine of her marriages occurring between 1999 and 2002.All occurred either in Westchester County, Long Island, New Jersey or the Bronx. She is believed to still be married to four men, and at one time, she was married to eight men at once, prosecutors say.Prosecutors said the immigration scam involved some of her husbands, who filed for permanent residence status shortly after the marriages.Any divorces happened only after such filings were approved. It was unclear whether any of the men will be prosecuted.The case was referred to the Bronx District Attorney's Office by Immigration and Customs Enforcement and the Department of Homeland Security's Investigation Division. Seven of the men are from so-called \\\"red-flagged\\\" countries, including Egypt, Turkey, Georgia, Pakistan and Mali.Her eighth husband, Rashid Rajput, was deported in 2006 to his native Pakistan after an investigation by the Joint Terrorism Task Force.If convicted, Barrientos faces up to four years in prison.  Her next court appearance is scheduled for May 18.\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/mldata/bart_cnn",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "mldata", "bart_cnn"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Greeks",
+              "request": {
+                "auth": {
+                  "type": "bearer",
+                  "bearer": [
+                    {
+                      "key": "token",
+                      "value": "",
+                      "type": "string"
+                    }
+                  ]
+                },
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"query\": {\n        \"otype\": \"Put\",\n        \"S0\": 227.44,\n        \"K\": 200,\n        \"expDay\": \"2022-11-18\",\n        \"ls\": \"Long\",\n        \"vol\": 29.00,\n        \"marketPrice\": 0.34,\n        \"q\": 1.19,\n        \"r\": 0.045\n    }\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/mldata/greeks",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "mldata", "greeks"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "User",
+          "item": [
+            {
+              "name": "Register",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"\"\n    , \"password\": \"\"\n, \"email\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/user/register",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "user", "register"]
+                }
+              },
+              "response": []
+            },
+            {
+              "name": "Login",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"username\": \"\"\n    , \"password\": \"\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:3000/api/user/login",
+                  "host": ["localhost"],
+                  "port": "3000",
+                  "path": ["api", "user", "login"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "api-altdata",
+      "item": [
+        {
+          "name": "Dark Pool",
+          "item": [
+            {
+              "name": "spCompare",
+              "request": {
+                "method": "GET",
+                "header": [],
+                "url": {
+                  "raw": "localhost:6000/darkpool/spCompare",
+                  "host": ["localhost"],
+                  "port": "6000",
+                  "path": ["darkpool", "spCompare"]
+                }
+              },
+              "response": []
+            }
+          ]
+        },
+        {
+          "name": "NewsAPI",
+          "item": [
+            {
+              "name": "everything",
+              "request": {
+                "method": "POST",
+                "header": [],
+                "body": {
+                  "mode": "raw",
+                  "raw": "{\n    \"query\": \"tesla\"\n}",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                },
+                "url": {
+                  "raw": "localhost:6000/news/everything",
+                  "host": ["localhost"],
+                  "port": "6000",
+                  "path": ["news", "everything"]
+                }
+              },
+              "response": []
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "api-tda",
+      "item": [
+        {
+          "name": "options",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n    \"query\": {\n        \"symbol\":\"tsla\"\n        , \"type\": \"CALL\"\n        , \"strikeCount\": 14\n        , \"fromDate\": \"2022-01-01\"\n        , \"toDate\": \"2022-12-31\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:6001/tda/options",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["tda", "options"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "volatility",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n    \"query\": {\n        \"symbol\":\"tsla\"\n        , \"type\": \"CALL\"\n        , \"strikeCount\": 14\n        , \"fromDate\": \"2022-11-04\"\n        , \"toDate\": \"2022-11-04\"\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "localhost:6001/tda/volatility",
+              "host": ["localhost"],
+              "port": "6001",
+              "path": ["tda", "volatility"]
+            }
+          },
+          "response": []
+        }
+      ]
+    },
+    {
+      "name": "api-ml",
+      "item": [
+        {
+          "name": "gpt2",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n    \"query\": \"Testing this language model is fun\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/gpt2",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["gpt2"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "AGI",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{ \n    \"query\": \"What should I get @jaykogen for Christmas?\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/agi",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["agi"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "roberta",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"question\":\"Testing this language model is fun\"\n    , \"context\": \"Helo Helo\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/roberta",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["roberta"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "bart_cnn",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"query\": \"New York (CNN)When Liana Barrientos was 23 years old, she got married in Westchester County, New York. A year later, she got married again in Westchester County, but to a different man and without divorcing her first husband.Only 18 days after that marriage, she got hitched yet again. Then, Barrientos declared \\\"I do\\\" five more times, sometimes only within two weeks of each other.In 2010, she married once more, this time in the Bronx. In an application for a marriage license, she stated it was her \\\"first and only\\\" marriage.Barrientos, now 39, is facing two criminal counts of \\\"offering a false instrument for filing in the first degree,\\\" referring to her false statements on the2010 marriage license application, according to court documents.Prosecutors said the marriages were part of an immigration scam.On Friday, she pleaded not guilty at State Supreme Court in the Bronx, according to her attorney, Christopher Wright, who declined to comment further.After leaving court, Barrientos was arrested and charged with theft of service and criminal trespass for allegedly sneaking into the New York subway through an emergency exit, said DetectiveAnnette Markowski, a police spokeswoman. In total, Barrientos has been married 10 times, with nine of her marriages occurring between 1999 and 2002.All occurred either in Westchester County, Long Island, New Jersey or the Bronx. She is believed to still be married to four men, and at one time, she was married to eight men at once, prosecutors say.Prosecutors said the immigration scam involved some of her husbands, who filed for permanent residence status shortly after the marriages.Any divorces happened only after such filings were approved. It was unclear whether any of the men will be prosecuted.The case was referred to the Bronx District Attorney's Office by Immigration and Customs Enforcement and the Department of Homeland Security's Investigation Division. Seven of the men are from so-called \\\"red-flagged\\\" countries, including Egypt, Turkey, Georgia, Pakistan and Mali.Her eighth husband, Rashid Rajput, was deported in 2006 to his native Pakistan after an investigation by the Joint Terrorism Task Force.If convicted, Barrientos faces up to four years in prison.  Her next court appearance is scheduled for May 18.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/bart_cnn",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["bart_cnn"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "autodd",
+          "request": {
+            "auth": {
+              "type": "noauth"
+            },
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"query\": \"New York (CNN)When Liana Barrientos was 23 years old, she got married in Westchester County, New York. A year later, she got married again in Westchester County, but to a different man and without divorcing her first husband.Only 18 days after that marriage, she got hitched yet again. Then, Barrientos declared \\\"I do\\\" five more times, sometimes only within two weeks of each other.In 2010, she married once more, this time in the Bronx. In an application for a marriage license, she stated it was her \\\"first and only\\\" marriage.Barrientos, now 39, is facing two criminal counts of \\\"offering a false instrument for filing in the first degree,\\\" referring to her false statements on the2010 marriage license application, according to court documents.Prosecutors said the marriages were part of an immigration scam.On Friday, she pleaded not guilty at State Supreme Court in the Bronx, according to her attorney, Christopher Wright, who declined to comment further.After leaving court, Barrientos was arrested and charged with theft of service and criminal trespass for allegedly sneaking into the New York subway through an emergency exit, said DetectiveAnnette Markowski, a police spokeswoman. In total, Barrientos has been married 10 times, with nine of her marriages occurring between 1999 and 2002.All occurred either in Westchester County, Long Island, New Jersey or the Bronx. She is believed to still be married to four men, and at one time, she was married to eight men at once, prosecutors say.Prosecutors said the immigration scam involved some of her husbands, who filed for permanent residence status shortly after the marriages.Any divorces happened only after such filings were approved. It was unclear whether any of the men will be prosecuted.The case was referred to the Bronx District Attorney's Office by Immigration and Customs Enforcement and the Department of Homeland Security's Investigation Division. Seven of the men are from so-called \\\"red-flagged\\\" countries, including Egypt, Turkey, Georgia, Pakistan and Mali.Her eighth husband, Rashid Rajput, was deported in 2006 to his native Pakistan after an investigation by the Joint Terrorism Task Force.If convicted, Barrientos faces up to four years in prison.  Her next court appearance is scheduled for May 18.\"\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/autodd",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["autodd"]
+            }
+          },
+          "response": []
+        },
+        {
+          "name": "greeks",
+          "request": {
+            "method": "POST",
+            "header": [],
+            "body": {
+              "mode": "raw",
+              "raw": "{\n    \"query\": {\n        \"otype\": \"Put\",\n        \"S0\": 227.44,\n        \"K\": 200,\n        \"expDay\": \"2022-11-18\",\n        \"ls\": \"Long\",\n        \"vol\": 29.00,\n        \"marketPrice\": 0.34,\n        \"q\": 1.19,\n        \"r\": 0.045\n    }\n}",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            },
+            "url": {
+              "raw": "127.0.0.1:7000/greeks",
+              "host": ["127", "0", "0", "1"],
+              "port": "7000",
+              "path": ["greeks"]
+            }
+          },
+          "response": []
+        }
+      ]
+    }
+  ]
+}

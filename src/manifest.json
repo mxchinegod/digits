@@ -1,0 +1,22 @@
+{
+  "name": "Digits Pro",
+  "short_name": "Digits Pro",
+  "display": "standalone",
+  "start_url": "./?utm_source=homescreen",
+  "theme_color": "#002140",
+  "background_color": "#001529",
+  "icons": [
+    {
+      "src": "favico.png",
+      "sizes": "192x192"
+    },
+    {
+      "src": "favico.png",
+      "sizes": "128x128"
+    },
+    {
+      "src": "favico.png",
+      "sizes": "512x512"
+    }
+  ]
+}

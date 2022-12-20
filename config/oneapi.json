@@ -1,0 +1,348 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "Digits Pro",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "description": "Development",
+      "url": "http://localhost:8000/"
+    },
+    {
+      "description": "Production",
+      "url": "https://dgtsapp.com/"
+    }
+  ],
+  "paths": {
+    "/api/currentUser": {
+      "get": {
+        "tags": ["api"],
+        "description": "获取当前的用户",
+        "operationId": "currentUser",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CurrentUser"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-swagger-router-controller": "api"
+    },
+    "/api/login/outLogin": {
+      "post": {
+        "description": "登录接口",
+        "operationId": "outLogin",
+        "tags": ["login"],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        }
+      },
+      "x-swagger-router-controller": "api"
+    },
+    "/api/login/account": {
+      "post": {
+        "tags": ["login"],
+        "description": "登录接口",
+        "operationId": "login",
+        "requestBody": {
+          "description": "登录系统",
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/LoginParams"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/LoginResult"
+                }
+              }
+            }
+          },
+          "401": {
+            "description": "Error",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/ErrorResponse"
+                }
+              }
+            }
+          }
+        },
+        "x-codegen-request-body-name": "body"
+      },
+      "x-swagger-router-controller": "api"
+    },
+    "/api/notices": {
+      "summary": "getNotices",
+      "description": "NoticeIconItem",
+      "get": {
+        "tags": ["api"],
+        "operationId": "getNotices",
+        "responses": {
+          "200": {
+            "description": "Success",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/NoticeIconList"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/swagger": {
+      "x-swagger-pipe": "swagger_raw"
+    }
+  },
+  "components": {
+    "schemas": {
+      "CurrentUser": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "userid": {
+            "type": "string"
+          },
+          "email": {
+            "type": "string"
+          },
+          "signature": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "group": {
+            "type": "string"
+          },
+          "tags": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "properties": {
+                "key": {
+                  "type": "string"
+                },
+                "label": {
+                  "type": "string"
+                }
+              }
+            }
+          },
+          "notifyCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "unreadCount": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "country": {
+            "type": "string"
+          },
+          "access": {
+            "type": "string"
+          },
+          "geographic": {
+            "type": "object",
+            "properties": {
+              "province": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": "string"
+                  }
+                }
+              },
+              "city": {
+                "type": "object",
+                "properties": {
+                  "label": {
+                    "type": "string"
+                  },
+                  "key": {
+                    "type": "string"
+                  }
+                }
+              }
+            }
+          },
+          "address": {
+            "type": "string"
+          },
+          "phone": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginResult": {
+        "type": "object",
+        "properties": {
+          "status": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string"
+          },
+          "currentAuthority": {
+            "type": "string"
+          }
+        }
+      },
+      "LoginParams": {
+        "type": "object",
+        "properties": {
+          "username": {
+            "type": "string"
+          },
+          "password": {
+            "type": "string"
+          },
+          "autoLogin": {
+            "type": "boolean"
+          },
+          "type": {
+            "type": "string"
+          }
+        }
+      },
+      "ErrorResponse": {
+        "required": ["errorCode"],
+        "type": "object",
+        "properties": {
+          "errorCode": {
+            "type": "string",
+            "description": "业务约定的错误码"
+          },
+          "errorMessage": {
+            "type": "string",
+            "description": "业务上的错误信息"
+          },
+          "success": {
+            "type": "boolean",
+            "description": "业务上的请求是否成功"
+          }
+        }
+      },
+      "NoticeIconList": {
+        "type": "object",
+        "properties": {
+          "data": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/NoticeIconItem"
+            }
+          },
+          "total": {
+            "type": "integer",
+            "description": "列表的内容总数",
+            "format": "int32"
+          },
+          "success": {
+            "type": "boolean"
+          }
+        }
+      },
+      "NoticeIconItemType": {
+        "title": "NoticeIconItemType",
+        "description": "已读未读列表的枚举",
+        "type": "string",
+        "properties": {},
+        "enum": ["notification", "message", "event"]
+      },
+      "NoticeIconItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "extra": {
+            "type": "string",
+            "format": "any"
+          },
+          "key": { "type": "string" },
+          "read": {
+            "type": "boolean"
+          },
+          "avatar": {
+            "type": "string"
+          },
+          "title": {
+            "type": "string"
+          },
+          "status": {
+            "type": "string"
+          },
+          "datetime": {
+            "type": "string",
+            "format": "date"
+          },
+          "description": {
+            "type": "string"
+          },
+          "type": {
+            "extensions": {
+              "x-is-enum": true
+            },
+            "$ref": "#/components/schemas/NoticeIconItemType"
+          }
+        }
+      }
+    }
+  }
+}
