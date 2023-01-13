@@ -3,7 +3,7 @@
 "><img style="max-width:175px;" src="./public/digits2.gif">
 </a>
 <br>
-DigitsUI is a highly configurable and ML-leveraged quantitative analysis platform for options traders and aspiring market makers 😉
+DigitsUI is a highly configurable and ML-leveraged quantitative analysis platform for options traders and aspiring market makers 😉 <a href="https://dgtsapp.com" target="_blank">See it live!</a>
 <br>
 <a align="center target="_blank" rel="noreferrer" href="https://github.com/DylanAlloy/digits-api-main">digits-api-main</a> | <a target="_blank" rel="noreferrer" href="https://github.com/DylanAlloy/digits-api-tda">digits-api-tda</a> | <a target="_blank" rel="noreferrer" href="https://github.com/DylanAlloy/digits-api-altdata">digits-api-altdata</a> | <a target="_blank" rel="noreferrer" href="https://github.com/DylanAlloy/digits-api-ml">digits-api-ml</a>
 <br>
