@@ -182,7 +182,7 @@ const AGI: React.FC = () => {
             }}
           >
             {!aiLoading ? (
-              <Progress percent={quota} format={() => `${quota}/100 quota left this month`} />
+              <Progress percent={quota} format={() => `${100 - quota}/100 quota left this month`} />
             ) : (
               <Progress
                 percent={quota}
