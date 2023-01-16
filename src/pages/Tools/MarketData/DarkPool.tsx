@@ -267,9 +267,8 @@ const DarkPool: React.FC = () => {
                 market-makers make their money by &quot;quoting a spread.&quot; This means placing a
                 bid at, say, $19.95, and an offer at $20.00. Since the MMs have no position in the
                 stock, the offer at $20.00 is necessarily entered as a short sale―they don&apos;t
-                own it&apos; so they can&apos;t actually sell it... If the belief is that there is
-                little probability to a contract obligation, this is typical contrarian
-                signal-making.
+                own it, so they can&apos;t actually sell it... If the belief is that there is little
+                probability to a contract obligation, this is typical contrarian signal-making.
               </Card>
             </Col>
           </Row>
