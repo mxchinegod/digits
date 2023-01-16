@@ -42,7 +42,7 @@
     "not ie <= 10"
   ],
   "dependencies": {
-    "@amcharts/amcharts4": "^4.10.30",
+    "@amcharts/amcharts4": "^4.10.33",
     "@ant-design/icons": "^4.8.0",
     "@ant-design/plots": "^1.2.2",
     "@ant-design/pro-components": "^2.3.35",
