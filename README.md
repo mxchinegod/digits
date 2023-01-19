@@ -1,7 +1,5 @@
 <p align="center">
-<a target="_blank" rel="noreferrer" href="https://www.buymeacoffee.com/alloydylan
-"><img style="max-width:175px;" src="./public/digits2.gif">
-</a>
+<img style="max-width:175px;" src="./public/digits2.gif">
 <br>
 DigitsUI is a highly configurable and ML-leveraged quantitative analysis platform for options traders and aspiring market makers 😉 <a href="https://dgtsapp.com" target="_blank">See it live!</a>
 <br>
