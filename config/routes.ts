@@ -49,24 +49,24 @@ export default [
       },
     ],
   },
-  {
-    path: '/tools',
-    name: 'Alternative Data',
-    icon: 'database',
-    access: 'paid',
-    routes: [
-      {
-        path: '/tools',
-        redirect: '/tools/altdata',
-      },
+  // {
+  //   path: '/tools',
+  //   name: 'Alternative Data',
+  //   icon: 'database',
+  //   access: 'paid',
+  //   routes: [
+  //     {
+  //       path: '/tools',
+  //       redirect: '/tools/altdata',
+  //     },
 
-      {
-        path: '/tools/altdata/reddit',
-        name: 'Reddit',
-        component: './Tools/AltData/Reddit',
-      },
-    ],
-  },
+  //     {
+  //       path: '/tools/altdata/reddit',
+  //       name: 'Reddit',
+  //       component: './Tools/AltData/Reddit',
+  //     },
+  //   ],
+  // },
   {
     path: '/analysis',
     name: 'Market Data',
