@@ -101,6 +101,7 @@ npm test
 
 ##### immediate
 
+- [ ] Make Reddit module async
 - [x] Initialize beautiful README.md
 - [ ] Add monthly OPEX to "Volatility" page
 - [ ] Create documentation page w/ info about data & sources
