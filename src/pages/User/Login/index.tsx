@@ -1,9 +1,9 @@
 import Footer from '@/components/Footer';
 import { currentUser, login } from '@/services/user/api';
-import { LockOutlined, UserOutlined } from '@ant-design/icons';
+import { LockOutlined, UserOutlined, ShoppingTwoTone, ClockCircleTwoTone } from '@ant-design/icons';
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { FormattedMessage, history, SelectLang, useIntl, useModel } from '@umijs/max';
-import { Alert, message, Tabs, Modal } from 'antd';
+import { Alert, message, Tabs, Modal, Row, Col, Typography, Card, Carousel, Space } from 'antd';
 import React, { useState } from 'react';
 import styles from './index.less';
 import type { Stripe } from '@stripe/stripe-js';
@@ -13,11 +13,56 @@ let stripePromise: Promise<Stripe | null>;
 const getStripe = () => {
   if (!stripePromise) {
     // Prod: pk_live_efNoQ4Hk5I5jsMXINvh0YTMD
-    // Dev
-    stripePromise = loadStripe('pk_test_5ikem4Zc1QoyRuWV1ljpMDwM');
+    // Dev: pk_test_5ikem4Zc1QoyRuWV1ljpMDwM
+    stripePromise = loadStripe('pk_live_efNoQ4Hk5I5jsMXINvh0YTMD');
   }
 
   return stripePromise;
+};
+
+const slide1: React.CSSProperties = {
+  height: '160px',
+  color: '#000',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+  backgroundImage: `url("/slide1.png")`,
+};
+
+const slide2: React.CSSProperties = {
+  height: '160px',
+  color: '#000',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+  backgroundImage: `url("/slide2.png")`,
+};
+
+const slide3: React.CSSProperties = {
+  height: '160px',
+  color: '#000',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+  backgroundImage: `url("/slide3.png")`,
+};
+
+const slide4: React.CSSProperties = {
+  height: '160px',
+  color: '#000',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+  backgroundImage: `url("/slide4.png")`,
+};
+
+const slide5: React.CSSProperties = {
+  height: '160px',
+  color: '#fff',
+  lineHeight: '160px',
+  textAlign: 'center',
+  background: '#364d79',
+  backgroundImage: `url("/slide5.png")`,
 };
 
 /* A React component that displays an error message. */
@@ -235,13 +280,29 @@ const Login: React.FC = () => {
         </LoginForm>
       </div>
       <Modal
-        title="Checkout"
         open={isModalOpen}
         onOk={redirectToCheckout}
         confirmLoading={isLoading}
-        okText={'Checkout'}
+        okText={[<ShoppingTwoTone twoToneColor="#52c41a" />, ' I don&apos;t mind investing early']}
+        cancelText={[<ClockCircleTwoTone twoToneColor="#eb2f96" />, ' Wait for launch']}
         onCancel={handleCancel}
       >
+        <Row gutter={16}>
+          <Col span={24}>
+            <Card bordered={false}>
+              <Typography.Title style={{ margin: 0 }}>DigitsAI is in beta.</Typography.Title>
+              <hr />
+              We can promise the tools herein will be what you&apos;ve heard/seen, but there may be
+              small 🐛s and glitches while we work on improving the service toward our official 🚀
+            </Card>
+            <Space direction="vertical" size="middle" style={{ display: 'flex' }}></Space>
+            <center>
+              <Typography.Title level={4}>
+                &quot;Okay 👌🏽 What&apos;s available today?&quot;
+              </Typography.Title>
+            </center>
+          </Col>
+        </Row>
         <Tabs
           onChange={(key) => {
             setProduct(key);
@@ -254,19 +315,36 @@ const Login: React.FC = () => {
               key: 'monthly',
               children: (
                 <>
+                  <Carousel autoplay effect="fade">
+                    <div>
+                      <h3 style={slide1}>
+                        <b>GPT-3.5 🔌⚡️ Live Market Data = 🤪💰</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide2}>
+                        <b>On-Demand 🥐 Volatility 🍋 Mapping</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide3}>
+                        <b>✍️ Daily dark-pool data 🕵️</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide4}>
+                        <b>Next-gen AI news summaries 📰</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide5}>
+                        <b>Soon 🚧 -- live social media stats models</b>
+                      </h3>
+                    </div>
+                  </Carousel>
                   <center>
                     <div className="checkout">
-                      <p className="checkout-title">Digits Pro Monthly</p>
-                      <p className="checkout-description">
-                        the most precise real-time market analysis platform.
-                      </p>
-                      <h1 className="checkout-price">$14.99/mo</h1>
-                      <img
-                        src={'/digits2.gif'}
-                        style={{ maxWidth: '200px' }}
-                        className="checkout-product-image"
-                        alt="Product"
-                      />
+                      <h1 className="checkout-price">$14.99/mo*</h1>
                     </div>
                   </center>
                 </>
@@ -277,19 +355,36 @@ const Login: React.FC = () => {
               key: 'annual',
               children: (
                 <>
+                  <Carousel autoplay effect="fade">
+                    <div>
+                      <h3 style={slide1}>
+                        <b>GPT-3.5 🔌⚡️ Live Market Data = 🤪💰</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide2}>
+                        <b>On-Demand 🥐 Volatility 🍋 Mapping</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide3}>
+                        <b>✍️ Daily dark-pool data 🕵️</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide4}>
+                        <b>Next-gen AI news summaries 📰</b>
+                      </h3>
+                    </div>
+                    <div>
+                      <h3 style={slide5}>
+                        <b>Soon 🚧 -- live social media stats models</b>
+                      </h3>
+                    </div>
+                  </Carousel>
                   <center>
                     <div className="checkout">
-                      <p className="checkout-title">Digits Pro Annual</p>
-                      <p className="checkout-description">
-                        the most precise real-time market analysis platform.
-                      </p>
-                      <h1 className="checkout-price">$149.88</h1>
-                      <img
-                        src={'/digits2.gif'}
-                        style={{ maxWidth: '200px' }}
-                        className="checkout-product-image"
-                        alt="Product"
-                      />
+                      <h1 className="checkout-price">$149.88*</h1>
                     </div>
                   </center>
                 </>
@@ -297,6 +392,10 @@ const Login: React.FC = () => {
             },
           ]}
         />
+        <br></br>
+        <Typography.Text disabled>
+          <small>* early adopters only, launch price TBD</small>
+        </Typography.Text>
       </Modal>
       <Footer />
     </div>
