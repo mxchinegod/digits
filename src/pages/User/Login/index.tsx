@@ -93,7 +93,7 @@ const Login: React.FC = () => {
 
   const item = {
     price:
-      product == 'monthly' ? 'price_1M0AsaAy6KNxnnbKOTjIk6dC' : 'price_1MELQNAy6KNxnnbKq2bQC2iV',
+      product == 'monthly' ? 'price_1M0A7kAy6KNxnnbKdGC0RfTB' : 'price_1M0A6FAy6KNxnnbKAACHuU0R',
     quantity: 1,
   };
 
