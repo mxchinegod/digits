@@ -20,7 +20,7 @@ const BlankPage: React.FC = () => (
       </Paragraph>
     }
     extra={[
-      <Button type="primary" key="console" href="/welcome">
+      <Button type="primary" key="console" href="/">
         Log in again to begin!
       </Button>,
     ]}
