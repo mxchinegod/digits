@@ -21,7 +21,7 @@ const BlankPage: React.FC = () => (
       </Paragraph>
     }
     extra={
-      <Button type="primary" key="console" href="mailto:#">
+      <Button type="primary" key="console" href="mailto:dylan@thisiswhereidostuff.com">
         Click me to get help!
       </Button>
     }
