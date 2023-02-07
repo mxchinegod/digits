@@ -12,5 +12,9 @@ declare namespace API {
     status: string;
     totalResults: number;
     articles: object;
-  }
+  };
+  type schedule = {
+    events: object;
+    announcement: object;
+  };
 }
