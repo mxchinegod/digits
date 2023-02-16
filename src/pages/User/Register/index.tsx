@@ -280,7 +280,7 @@ const Register: React.FC = () => {
               open={isModalOpen}
               onOk={redirectToCheckout}
               confirmLoading={isLoading}
-              okText={[<ShoppingTwoTone twoToneColor="#52c41a" />, ' invest early']}
+              okText={[<ShoppingTwoTone twoToneColor="#52c41a" />, ' don&apos;t wait']}
               cancelText={[<ClockCircleTwoTone twoToneColor="#eb2f96" />, ' wait for launch']}
               onCancel={handleCancel}
             >
