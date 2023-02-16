@@ -36,7 +36,7 @@ const GlobalHeaderRight: React.FC = () => {
     _setSymbol(query);
     historicalPrices({
       data: {
-        symbol: query,
+        symbol: symbol,
         email: initialState?.currentUser?.email,
         insert: { quota: { type: 'Research Model', date: moment().format() } },
       },
