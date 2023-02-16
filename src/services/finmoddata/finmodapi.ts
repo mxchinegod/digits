@@ -38,6 +38,16 @@ export async function financialGrowth(options?: { [key: string]: any }) {
   });
 }
 
+export async function financialRatios(options?: { [key: string]: any }) {
+  return request<{}>('/api/finmoddata/financialRatios', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    ...(options || {}),
+  });
+}
+
 export async function dcf(options?: { [key: string]: any }) {
   return request<{}>('/api/finmoddata/dcf', {
     method: 'POST',

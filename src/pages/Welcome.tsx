@@ -263,7 +263,7 @@ const Welcome: React.FC = () => {
             )}
           </p>
           <div className="site-card-wrapper">
-            <Row gutter={24} style={{ maxHeight: '520px', overflow: 'auto' }}>
+            <Row gutter={24} style={{ maxHeight: '750px', overflow: 'auto' }}>
               {news.map(
                 (article: {
                   source: any;
@@ -281,7 +281,7 @@ const Welcome: React.FC = () => {
                   ) {
                     return (
                       <>
-                        <Col span={24} xxl={6} xl={8} lg={12} md={12} sm={24}>
+                        <Col span={24} xxl={4} xl={8} lg={12} md={12} sm={24}>
                           <Card
                             hoverable={true}
                             style={{ marginBottom: 15 }}

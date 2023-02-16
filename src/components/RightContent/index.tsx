@@ -6,7 +6,9 @@ import {
   secFiling,
   financialGrowth,
   dcf,
-  /* erTranscript ,*/ senateDisclosure,
+  erTranscript,
+  senateDisclosure,
+  financialRatios,
 } from '@/services/finmoddata/finmodapi';
 import React, { useState } from 'react';
 import HeaderSearch from '../HeaderSearch';
@@ -39,6 +41,45 @@ const GlobalHeaderRight: React.FC = () => {
 
   const getEquityData = (val: any) => {
     _setSymbol(val);
+    // Premium :(
+    financialGrowth({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((financialGrowthRes: any) => {
+      console.log(financialGrowthRes);
+    });
+    // Premium :(
+    financialRatios({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((financialRatiosRes: any) => {
+      console.log(financialRatiosRes);
+    });
+    // Premium :(
+    erTranscript({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((erTranscriptRes: any) => {
+      console.log(erTranscriptRes);
+    });
+    dcf({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((dcfRes: any) => {
+      console.log(dcfRes);
+    });
     historicalPrices({
       data: {
         symbol: val.replace(/[^a-zA-Z]+/g, ''),
@@ -57,34 +98,6 @@ const GlobalHeaderRight: React.FC = () => {
     }).then((secFilingRes: any) => {
       console.log(secFilingRes);
     });
-    financialGrowth({
-      data: {
-        symbol: val.replace(/[^a-zA-Z]+/g, ''),
-        email: initialState?.currentUser?.email,
-        insert: { quota: { type: 'Research Model', date: moment().format() } },
-      },
-    }).then((financialGrowthRes: any) => {
-      console.log(financialGrowthRes);
-    });
-    dcf({
-      data: {
-        symbol: val.replace(/[^a-zA-Z]+/g, ''),
-        email: initialState?.currentUser?.email,
-        insert: { quota: { type: 'Research Model', date: moment().format() } },
-      },
-    }).then((dcfRes: any) => {
-      console.log(dcfRes);
-    });
-    // Premium :(
-    // erTranscript({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((erTranscriptRes: any) => {
-    //   console.log(erTranscriptRes);
-    // });
     senateDisclosure({
       data: {
         symbol: val.replace(/[^a-zA-Z]+/g, ''),
