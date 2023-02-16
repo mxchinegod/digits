@@ -195,7 +195,7 @@ const Welcome: React.FC = () => {
               ]}
             >
               <Search
-                placeholder="search text"
+                placeholder="headline search"
                 allowClear
                 enterButton={
                   <Tag
@@ -281,7 +281,7 @@ const Welcome: React.FC = () => {
                   ) {
                     return (
                       <>
-                        <Col span={24} xxl={4} xl={8} lg={12} md={12} sm={24}>
+                        <Col span={24} xxl={6} xl={8} lg={12} md={12} sm={24}>
                           <Card
                             hoverable={true}
                             style={{ marginBottom: 15 }}
