@@ -7,7 +7,7 @@ import { request } from '@umijs/max';
  * @param [options] - { [key: string]: any }
  */
 export async function schedule(options?: { [key: string]: any }) {
-  return request<{}>('/api/reserve/schedule', {
+  return request<{}>('/api/altdata/reserve/schedule', {
     method: 'GET',
     headers: {
       Authorization: `Bearer ${localStorage.getItem('token')}`,

@@ -3,9 +3,11 @@
 // API 更新时间：
 // API 唯一标识：
 import * as darkpool from './darkpool';
+import * as reserve from './reserve';
 import * as news from './newsapi';
 
 export default {
   darkpool,
-  news
+  reserve,
+  news,
 };

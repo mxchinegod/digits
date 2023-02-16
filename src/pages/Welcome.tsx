@@ -11,8 +11,11 @@ import {
   Alert,
   Tag,
   Divider,
+  Calendar,
+  Modal,
   AutoComplete,
 } from 'antd';
+import type { Moment } from 'moment';
 import {
   ShareAltOutlined,
   ClockCircleOutlined,
@@ -24,6 +27,7 @@ import {
 const { Search } = Input;
 const { Meta } = Card;
 import { everything } from '@/services/altdata/newsapi';
+import { schedule } from '@/services/altdata/reserve';
 import { summarize } from '@/services/mldata/mlapi';
 import moment from 'moment';
 moment.locale('en');
@@ -38,9 +42,12 @@ import React, { useLayoutEffect, useState } from 'react';
 
 const Welcome: React.FC = () => {
   const [news, setNews] = useState([]);
+  const [events, setEvents] = useState([]);
   const [summary, setSummary] = useState('');
+  const [fedLoading, setFedLoading] = useState(true);
   const [loading, setLoading] = useState(true);
   const [aiLoading, setAILoading] = useState(true);
+  const [calendarOpen, setCalendarOpen] = useState(false);
   /**
    * The openNotification function is called when the user clicks the "Get Summary" button. It opens a
    * notification window with the summary of the news article
@@ -62,6 +69,46 @@ const Welcome: React.FC = () => {
       key,
       onClose: close,
     });
+  };
+
+  const fedSchedule = () => {
+    setFedLoading(true);
+    schedule().then((response: any) => {
+      const workingData = response.data;
+      if (workingData.events && workingData.events.length > 0) {
+        setEvents(workingData.events);
+        setFedLoading(false);
+        console.log(fedLoading);
+      }
+    });
+  };
+
+  const getListData = (value: Moment) => {
+    let listData;
+    fedSchedule();
+    events.slice(0, 1).forEach((item) => {
+      if (item['month'] === value.format('YYYY-MM') && item['days'] === value.date().toString()) {
+        listData = item;
+      }
+    });
+    console.log(listData);
+    return listData || [];
+  };
+
+  const dateCellRender = (value: Moment) => {
+    const listData = getListData(value);
+    if (listData.length > 0) {
+      return (
+        <ul className="events">
+          {listData.map((item) => (
+            <li key={item['title']}>
+              <Badge dot />
+              {item['title']} - {item['time']}
+            </li>
+          ))}
+        </ul>
+      );
+    }
   };
 
   /**
@@ -123,6 +170,9 @@ const Welcome: React.FC = () => {
         title="Welcome to Digits Pro"
         extra={
           <Space>
+            <Button type="primary" onClick={() => setCalendarOpen(true)}>
+              Reserve Calendar
+            </Button>
             <AutoComplete
               key="AutoComplete"
               options={[
@@ -296,6 +346,17 @@ const Welcome: React.FC = () => {
           </div>
         </div>
       </Card>
+      <Modal
+        title="🗓️ Federal Reserve Calendar"
+        centered
+        footer={null}
+        open={calendarOpen}
+        onCancel={() => setCalendarOpen(false)}
+        destroyOnClose={true}
+        width={10000}
+      >
+        <Calendar dateCellRender={dateCellRender} />
+      </Modal>
     </PageContainer>
   );
 };
