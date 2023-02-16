@@ -1,7 +1,13 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { SelectLang, useModel } from '@umijs/max';
 import { Space, Modal } from 'antd';
-import { historicalPrices } from '@/services/finmoddata/finmodapi';
+import {
+  historicalPrices,
+  secFiling,
+  financialGrowth,
+  dcf,
+  /* erTranscript ,*/ senateDisclosure,
+} from '@/services/finmoddata/finmodapi';
 import React, { useState } from 'react';
 import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
@@ -17,9 +23,8 @@ const GlobalHeaderRight: React.FC = () => {
   const [processing, setProcessing] = useState<any | ''>(null);
   const [symbol, setSymbol] = useState('');
   const _setSymbol = (val: string) => {
-    const sym = val.replace(/[^a-zA-Z]+/g, '');
+    const sym = val.replace(/[^a-zA-Z]+/g, '').toUpperCase();
     setSymbol(sym);
-    console.log(symbol);
   };
   if (!initialState || !initialState.settings) {
     return null;
@@ -32,16 +37,62 @@ const GlobalHeaderRight: React.FC = () => {
     className = `${styles.right}  ${styles.dark}`;
   }
 
-  const getEquityData = (query: any) => {
-    _setSymbol(query);
+  const getEquityData = (val: any) => {
+    _setSymbol(val);
     historicalPrices({
       data: {
-        symbol: symbol,
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
         email: initialState?.currentUser?.email,
         insert: { quota: { type: 'Research Model', date: moment().format() } },
       },
     }).then((histPricesRes: any) => {
       console.log(histPricesRes);
+    });
+    secFiling({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((secFilingRes: any) => {
+      console.log(secFilingRes);
+    });
+    financialGrowth({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((financialGrowthRes: any) => {
+      console.log(financialGrowthRes);
+    });
+    dcf({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((dcfRes: any) => {
+      console.log(dcfRes);
+    });
+    // Premium :(
+    // erTranscript({
+    //   data: {
+    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+    //     email: initialState?.currentUser?.email,
+    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+    //   },
+    // }).then((erTranscriptRes: any) => {
+    //   console.log(erTranscriptRes);
+    // });
+    senateDisclosure({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((senateDisclosureRes: any) => {
+      console.log(senateDisclosureRes);
     });
   };
 
@@ -75,7 +126,7 @@ const GlobalHeaderRight: React.FC = () => {
         onOk={() => openModal(false)}
         onCancel={() => openModal(false)}
       >
-        {processing ? <p>not processing ${processing}</p> : <p>not processing ${processing}</p>}
+        {processing ? <p>done processing ${symbol}</p> : <p>not processing ${symbol}</p>}
       </Modal>
     </Space>
   );

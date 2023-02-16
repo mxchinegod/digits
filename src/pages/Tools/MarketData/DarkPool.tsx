@@ -107,7 +107,7 @@ const DarkPool: React.FC = () => {
             backgroundPosition: '100% -30%',
             backgroundRepeat: 'no-repeat',
             backgroundSize: '500px auto',
-            backgroundImage: "url('/cybernetic.jpg')",
+            backgroundImage: "url('/brain.png')",
           }}
         >
           <div
