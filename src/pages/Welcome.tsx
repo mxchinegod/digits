@@ -99,7 +99,9 @@ const Welcome: React.FC = () => {
         {listData.map((item) => (
           <li key={item['title']}>
             <Badge />
-            {item['title']} - {item['time']}
+            <small>
+              {item['title']} - {item['time']}
+            </small>
           </li>
         ))}
       </ul>
@@ -163,16 +165,17 @@ const Welcome: React.FC = () => {
         style={{
           borderRadius: 8,
         }}
-        title="Welcome to Digits Pro"
+        title={
+          <Button
+            type="primary"
+            disabled={fedLoading ? true : false}
+            onClick={() => setCalendarOpen(true)}
+          >
+            Reserve Calendar
+          </Button>
+        }
         extra={
           <Space>
-            <Button
-              type="primary"
-              disabled={fedLoading ? true : false}
-              onClick={() => setCalendarOpen(true)}
-            >
-              Reserve Calendar
-            </Button>
             <AutoComplete
               key="AutoComplete"
               options={[
@@ -197,14 +200,7 @@ const Welcome: React.FC = () => {
               <Search
                 placeholder="headline search"
                 allowClear
-                enterButton={
-                  <Tag
-                    icon={!loading ? <FileSearchOutlined /> : <SyncOutlined spin />}
-                    color={!loading ? 'success' : 'processing'}
-                  >
-                    {news.length} articles
-                  </Tag>
-                }
+                enterButton={!loading ? <FileSearchOutlined /> : <SyncOutlined spin />}
                 size="large"
                 onSearch={queryEverything}
               />
@@ -353,9 +349,9 @@ const Welcome: React.FC = () => {
         open={calendarOpen}
         onCancel={() => setCalendarOpen(false)}
         destroyOnClose={true}
-        width={10000}
+        width={1200}
       >
-        <Calendar dateCellRender={dateCellRender} />
+        <Calendar fullscreen={true} dateCellRender={dateCellRender} />
       </Modal>
     </PageContainer>
   );
