@@ -71,6 +71,16 @@ const GlobalHeaderRight: React.FC = () => {
     }).then((erTranscriptRes: any) => {
       console.log(erTranscriptRes);
     });
+    // Premium :(
+    senateDisclosure({
+      data: {
+        symbol: val.replace(/[^a-zA-Z]+/g, ''),
+        email: initialState?.currentUser?.email,
+        insert: { quota: { type: 'Research Model', date: moment().format() } },
+      },
+    }).then((senateDisclosureRes: any) => {
+      console.log(senateDisclosureRes);
+    });
     dcf({
       data: {
         symbol: val.replace(/[^a-zA-Z]+/g, ''),
@@ -97,15 +107,6 @@ const GlobalHeaderRight: React.FC = () => {
       },
     }).then((secFilingRes: any) => {
       console.log(secFilingRes);
-    });
-    senateDisclosure({
-      data: {
-        symbol: val.replace(/[^a-zA-Z]+/g, ''),
-        email: initialState?.currentUser?.email,
-        insert: { quota: { type: 'Research Model', date: moment().format() } },
-      },
-    }).then((senateDisclosureRes: any) => {
-      console.log(senateDisclosureRes);
     });
   };
 
@@ -135,6 +136,7 @@ const GlobalHeaderRight: React.FC = () => {
       <Modal
         title={processing ? processing : 'Loading'}
         centered
+        destroyOnClose={true}
         open={modalOpen}
         onOk={() => openModal(false)}
         onCancel={() => openModal(false)}

@@ -78,37 +78,32 @@ const Welcome: React.FC = () => {
       if (workingData.events && workingData.events.length > 0) {
         setEvents(workingData.events);
         setFedLoading(false);
-        console.log(fedLoading);
       }
     });
   };
 
   const getListData = (value: Moment) => {
     let listData;
-    fedSchedule();
-    events.slice(0, 1).forEach((item) => {
+    events.forEach((item) => {
       if (item['month'] === value.format('YYYY-MM') && item['days'] === value.date().toString()) {
-        listData = item;
+        listData = [item];
       }
     });
-    console.log(listData);
     return listData || [];
   };
 
   const dateCellRender = (value: Moment) => {
     const listData = getListData(value);
-    if (listData.length > 0) {
-      return (
-        <ul className="events">
-          {listData.map((item) => (
-            <li key={item['title']}>
-              <Badge dot />
-              {item['title']} - {item['time']}
-            </li>
-          ))}
-        </ul>
-      );
-    }
+    return (
+      <ul className="events">
+        {listData.map((item) => (
+          <li key={item['title']}>
+            <Badge />
+            {item['title']} - {item['time']}
+          </li>
+        ))}
+      </ul>
+    );
   };
 
   /**
@@ -160,6 +155,7 @@ const Welcome: React.FC = () => {
 
   useLayoutEffect(() => {
     queryEverything('stock market');
+    fedSchedule();
   }, []);
   return (
     <PageContainer>
@@ -170,7 +166,11 @@ const Welcome: React.FC = () => {
         title="Welcome to Digits Pro"
         extra={
           <Space>
-            <Button type="primary" onClick={() => setCalendarOpen(true)}>
+            <Button
+              type="primary"
+              disabled={fedLoading ? true : false}
+              onClick={() => setCalendarOpen(true)}
+            >
               Reserve Calendar
             </Button>
             <AutoComplete
@@ -189,8 +189,8 @@ const Welcome: React.FC = () => {
                   value: 'FOMC',
                 },
                 {
-                  label: '$META',
-                  value: '$META',
+                  label: '$TSLA',
+                  value: '$TSLA',
                 },
               ]}
             >
