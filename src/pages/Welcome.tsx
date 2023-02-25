@@ -349,7 +349,8 @@ const Welcome: React.FC = () => {
         open={calendarOpen}
         onCancel={() => setCalendarOpen(false)}
         destroyOnClose={true}
-        width={1200}
+        style={{ minWidth: '75%' }}
+        maskClosable={false}
       >
         <Calendar fullscreen={true} dateCellRender={dateCellRender} />
       </Modal>

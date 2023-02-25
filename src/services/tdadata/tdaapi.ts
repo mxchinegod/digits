@@ -18,6 +18,16 @@ export async function options(options?: { [key: string]: any }) {
   });
 }
 
+export async function historicalPrices(options?: { [key: string]: any }) {
+  return request<{}>('/api/tdadata/historicalPrices', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    ...(options || {}),
+  });
+}
+
 export async function volatility(options?: { [key: string]: any }) {
   return request<{}>('/api/tdadata/volatility', {
     method: 'POST',
