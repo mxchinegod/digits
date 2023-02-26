@@ -255,7 +255,7 @@ const Welcome: React.FC = () => {
                 }
               />
             ) : (
-              summary
+              <p style={{ backgroundColor: '#fff' }}>{summary}</p>
             )}
           </p>
           <div className="site-card-wrapper">

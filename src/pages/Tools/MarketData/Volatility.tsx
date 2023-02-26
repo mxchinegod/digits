@@ -224,7 +224,7 @@ const Volatility: React.FC = () => {
               }
               datetime={'Updated March 22, 2022'}
               content={
-                <p>
+                <p style={{ backgroundColor: '#fff' }}>
                   <h3>Key Takeaways</h3>
                   <ul>
                     <li>

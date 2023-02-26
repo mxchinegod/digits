@@ -45,3 +45,13 @@ export async function agi(options?: { [key: string]: any }) {
     ...(options || {}),
   });
 }
+
+export async function pdfSentiment(options?: { [key: string]: any }) {
+  return request<{}>('/api/mldata/pdfSentiment', {
+    method: 'POST',
+    headers: {
+      Authorization: `Bearer ${localStorage.getItem('token')}`,
+    },
+    ...(options || {}),
+  });
+}

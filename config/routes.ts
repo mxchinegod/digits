@@ -90,19 +90,24 @@ export default [
     ],
   },
   {
-    path: '/agi',
+    path: '/digitsai',
     name: 'Digits AI',
     icon: 'experimentOutlined',
     access: 'paid',
     routes: [
       {
-        path: '/agi',
-        redirect: '/agi',
+        path: '/digitsai',
+        redirect: '/digitsai',
       },
       {
-        path: '/agi/oracle',
+        path: '/digitsai/oracle',
         name: 'Oracle',
-        component: './Tools/AGI/Oracle',
+        component: './Tools/DigitsAI/Oracle',
+      },
+      {
+        path: '/digitsai/documents',
+        name: 'Document Processing',
+        component: './Tools/DigitsAI/Documents',
       },
     ],
   },

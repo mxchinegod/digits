@@ -155,7 +155,7 @@ const DarkPool: React.FC = () => {
               }
               datetime={'Updated May 25, 2022'}
               content={
-                <p>
+                <p style={{ backgroundColor: '#fff' }}>
                   A dark pool is a privately organized financial forum or exchange for trading
                   securities. Dark pools allow institutional investors to trade without exposure
                   until after the trade has been executed and reported. Dark pools are a type of
@@ -190,7 +190,7 @@ const DarkPool: React.FC = () => {
               >
                 Any time{' '}
                 <Tooltip title="Most long options have positive gamma and most short options have negative gamma. Long options have a positive relationship with gamma because as price increases, Gamma increases as well, causing Delta to approach 1 from 0 (long call option) and 0 from −1 (long put option). The inverse is true for short options.">
-                  an contract &apos;gamma&apos; <QuestionCircleTwoTone />
+                  a contract &apos;gamma&apos; <QuestionCircleTwoTone />
                 </Tooltip>{' '}
                 is under 1.00, puts are relatively more important; any time &apos;gamma&apos; is
                 over 1.00, calls are relatively more important. By design, the critically important

@@ -9,12 +9,12 @@ import // historicalPrices,
 // senateDisclosure,
 // financialRatios,
 '@/services/finmoddata/finmodapi';
-import { historicalPrices } from '@/services/tdadata/tdaapi';
+// import { historicalPrices } from '@/services/tdadata/tdaapi';
 import React, {
   useState,
   //, useRef
 } from 'react';
-import HeaderSearch from '../HeaderSearch';
+// import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
 import * as am4core from '@amcharts/amcharts4/core';
@@ -30,14 +30,14 @@ export type SiderTheme = 'light' | 'dark';
 const GlobalHeaderRight: React.FC = () => {
   const { initialState } = useModel('@@initialState');
   const [modalOpen, openModal] = useState(false);
-  const [processing, setProcessing] = useState(false);
-  const [symbol, setSymbol] = useState('');
-  //const x = useRef(null);
-  const [histPrices, setHistoricalPrices] = useState([]);
-  const _setSymbol = (val: string) => {
-    const sym = val.replace(/[^a-zA-Z]+/g, '').toUpperCase();
-    setSymbol(sym);
-  };
+  // const [processing, setProcessing] = useState(false);
+  // const [symbol, setSymbol] = useState('');
+  // const x = useRef(null);
+  // const [histPrices, setHistoricalPrices] = useState([]);
+  // const _setSymbol = (val: string) => {
+  //   const sym = val.replace(/[^a-zA-Z]+/g, '').toUpperCase();
+  //   setSymbol(sym);
+  // };
   if (!initialState || !initialState.settings) {
     return null;
   }
@@ -137,76 +137,76 @@ const GlobalHeaderRight: React.FC = () => {
   //     chart.dispose();
   //   };
   // };
-  const getEquityData = (val: any) => {
-    _setSymbol(val);
-    // Premium :(
-    // financialGrowth({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((financialGrowthRes: any) => {
-    //   //console.log(financialGrowthRes);
-    // });
-    // // Premium :(
-    // financialRatios({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((financialRatiosRes: any) => {
-    //   //console.log(financialRatiosRes);
-    // });
-    // // Premium :(
-    // erTranscript({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((erTranscriptRes: any) => {
-    //   //console.log(erTranscriptRes);
-    // });
-    // // Premium :(
-    // senateDisclosure({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((senateDisclosureRes: any) => {
-    //   //console.log(senateDisclosureRes);
-    // });
-    // dcf({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((dcfRes: any) => {
-    //   //console.log(dcfRes);
-    // });
-    // secFiling({
-    //   data: {
-    //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
-    //     email: initialState?.currentUser?.email,
-    //     insert: { quota: { type: 'Research Model', date: moment().format() } },
-    //   },
-    // }).then((secFilingRes: any) => {
-    //   //console.log(secFilingRes);
-    // });
-    historicalPrices({
-      data: {
-        symbol: val.replace(/[^a-zA-Z]+/g, ''),
-        email: initialState?.currentUser?.email,
-        insert: { quota: { type: 'Research Model', date: moment().format() } },
-      },
-    }).then((histPricesRes: any) => {
-      setHistoricalPrices(histPricesRes.data.candles);
-    });
-  };
+  // const getEquityData = (val: any) => {
+  //   _setSymbol(val);
+  //   // Premium :(
+  //   // financialGrowth({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((financialGrowthRes: any) => {
+  //   //   //console.log(financialGrowthRes);
+  //   // });
+  //   // // Premium :(
+  //   // financialRatios({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((financialRatiosRes: any) => {
+  //   //   //console.log(financialRatiosRes);
+  //   // });
+  //   // // Premium :(
+  //   // erTranscript({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((erTranscriptRes: any) => {
+  //   //   //console.log(erTranscriptRes);
+  //   // });
+  //   // // Premium :(
+  //   // senateDisclosure({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((senateDisclosureRes: any) => {
+  //   //   //console.log(senateDisclosureRes);
+  //   // });
+  //   // dcf({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((dcfRes: any) => {
+  //   //   //console.log(dcfRes);
+  //   // });
+  //   // secFiling({
+  //   //   data: {
+  //   //     symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //   //     email: initialState?.currentUser?.email,
+  //   //     insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //   //   },
+  //   // }).then((secFilingRes: any) => {
+  //   //   //console.log(secFilingRes);
+  //   // });
+  //   historicalPrices({
+  //     data: {
+  //       symbol: val.replace(/[^a-zA-Z]+/g, ''),
+  //       email: initialState?.currentUser?.email,
+  //       insert: { quota: { type: 'Research Model', date: moment().format() } },
+  //     },
+  //   }).then((histPricesRes: any) => {
+  //     setHistoricalPrices(histPricesRes.data.candles);
+  //   });
+  // };
 
   if (histPrices) {
     //createHistoricalPricesChart();
@@ -214,7 +214,7 @@ const GlobalHeaderRight: React.FC = () => {
 
   return (
     <Space className={className}>
-      <HeaderSearch
+      {/* <HeaderSearch
         className={`${styles.action} ${styles.search}`}
         placeholder="symbol"
         options={[]}
@@ -223,7 +223,7 @@ const GlobalHeaderRight: React.FC = () => {
           openModal(true);
           getEquityData(value);
         }}
-      />
+      /> */}
       <span
         className={styles.action}
         onClick={() => {

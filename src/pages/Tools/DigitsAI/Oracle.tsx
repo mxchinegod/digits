@@ -214,7 +214,7 @@ const AGI: React.FC = () => {
                     return (
                       <>
                         <Timeline.Item color="#00CCFF" dot={<UserOutlined />}>
-                          <p>{piece}</p>
+                          <p style={{ backgroundColor: '#fff' }}>{piece}</p>
                         </Timeline.Item>
                       </>
                     );
@@ -222,7 +222,7 @@ const AGI: React.FC = () => {
                   return (
                     <>
                       <Timeline.Item color="#52c41a" dot={<SmileOutlined />}>
-                        <p>{piece}</p>
+                        <p style={{ backgroundColor: '#fff' }}>{piece}</p>
                       </Timeline.Item>
                     </>
                   );

@@ -16,6 +16,7 @@ export default {
   'menu.dashboard.monitor': 'Monitor',
   'menu.dashboard.workplace': 'Workplace',
   'menu.Digits AI.Oracle': 'Oracle',
+  'menu.Digits AI.Document Processing': 'Document Processing',
   'menu.Digits AI': 'Digits AI',
   'menu.exception.403': '403',
   'menu.exception.404': '404',
