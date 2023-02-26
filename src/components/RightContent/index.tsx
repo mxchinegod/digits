@@ -208,9 +208,9 @@ const GlobalHeaderRight: React.FC = () => {
   //   });
   // };
 
-  if (histPrices) {
-    //createHistoricalPricesChart();
-  }
+  // if (histPrices) {
+  //createHistoricalPricesChart();
+  // }
 
   return (
     <Space className={className}>
