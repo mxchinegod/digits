@@ -1,6 +1,9 @@
 import { QuestionCircleOutlined } from '@ant-design/icons';
 import { SelectLang, useModel } from '@umijs/max';
-import { Space, Modal } from 'antd';
+import {
+  Space,
+  //, Modal
+} from 'antd';
 import // historicalPrices,
 // secFiling,
 // financialGrowth,
@@ -10,10 +13,9 @@ import // historicalPrices,
 // financialRatios,
 '@/services/finmoddata/finmodapi';
 // import { historicalPrices } from '@/services/tdadata/tdaapi';
-import React, {
-  useState,
-  //, useRef
-} from 'react';
+import React from // useState,
+//, useRef
+'react';
 // import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
 import styles from './index.less';
@@ -29,7 +31,7 @@ export type SiderTheme = 'light' | 'dark';
 
 const GlobalHeaderRight: React.FC = () => {
   const { initialState } = useModel('@@initialState');
-  const [modalOpen, openModal] = useState(false);
+  // const [modalOpen, openModal] = useState(false);
   // const [processing, setProcessing] = useState(false);
   // const [symbol, setSymbol] = useState('');
   // const x = useRef(null);
@@ -234,7 +236,7 @@ const GlobalHeaderRight: React.FC = () => {
       </span>
       <Avatar />
       <SelectLang className={styles.action} />
-      <Modal
+      {/* <Modal
         title={processing ? processing : 'Loading'}
         centered
         destroyOnClose={true}
@@ -246,7 +248,7 @@ const GlobalHeaderRight: React.FC = () => {
         <div id="historicalPricesChart" style={{ width: '100%', height: '500px' }} />
 
         {processing ? <p>done processing ${symbol}</p> : <p>processing ${symbol}</p>}
-      </Modal>
+      </Modal> */}
     </Space>
   );
 };
