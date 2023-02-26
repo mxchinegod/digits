@@ -91,7 +91,7 @@ export default [
   },
   {
     path: '/agi',
-    name: 'True AI',
+    name: 'Digits AI',
     icon: 'experimentOutlined',
     access: 'paid',
     routes: [
