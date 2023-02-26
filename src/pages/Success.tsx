@@ -6,7 +6,7 @@ const { Paragraph } = Typography;
 const BlankPage: React.FC = () => (
   <Result
     status="success"
-    title="Successfully Purchased Digits Pro!"
+    title="Successfully Purchased Digits AI!"
     subTitle={
       <Paragraph>
         <blockquote>

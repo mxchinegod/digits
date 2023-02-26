@@ -12,7 +12,7 @@ const Settings: LayoutSettings & {
   fixedHeader: true,
   fixSiderbar: true,
   colorWeak: false,
-  title: 'Digits Pro',
+  title: 'Digits AI',
   splitMenus: false,
   pwa: false,
   logo: '/digits2.gif',

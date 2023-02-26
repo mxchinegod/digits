@@ -32,8 +32,8 @@ const Footer: React.FC = () => {
         copyright={`${currentYear} ${defaultMessage}`}
         links={[
           {
-            key: 'Digits Pro',
-            title: `Digits Pro 3.0.0-beta`,
+            key: 'Digits AI',
+            title: `Digits AI 3.0.0-beta`,
             href: 'https://dgtsapp.com',
             blankTarget: true,
           },

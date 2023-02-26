@@ -44,7 +44,7 @@ DigitsUI is a highly configurable and ML-leveraged quantitative analysis platfor
 
 ## 📜 Provided Scripts ✨
 
-##### Digits Pro provides some useful scripts to help you quick start development, build for production, code style check, and test.
+##### Digits AI provides some useful scripts to help you quick start development, build for production, code style check, and test.
 
 ##### Scripts provided in `package.json`. It's safe to modify or add additional scripts, but here are the defaults:
 

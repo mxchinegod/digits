@@ -29,7 +29,8 @@ const Admin: React.FC = () => {
         />
         <Typography.Title level={2} style={{ textAlign: 'center' }}>
           {/* eslint-disable-next-line react/no-unescaped-entities */}
-          <SmileTwoTone /> Digits Pro <HeartTwoTone twoToneColor="#eb2f96" />'s You
+          <SmileTwoTone /> Digits AI <HeartTwoTone twoToneColor="#eb2f96" />
+          &apos;s You
         </Typography.Title>
       </Card>
       <p style={{ textAlign: 'center', marginTop: 24 }}>

@@ -110,7 +110,7 @@ const AGI: React.FC = () => {
         style={{
           borderRadius: 8,
         }}
-        title="Welcome to Digits Pro"
+        title="Welcome to Digits AI"
         extra={
           <Space>
             <AutoComplete

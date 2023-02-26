@@ -66,7 +66,7 @@ export default () => {
       placeholder="站内搜索"
       defaultValue="umi ui"
       options={[
-        { label: 'Digits Pro', value: 'Digits Pro' },
+        { label: 'Digits AI', value: 'Digits AI' },
         {
           label: 'Digits',
           value: 'Digits',
