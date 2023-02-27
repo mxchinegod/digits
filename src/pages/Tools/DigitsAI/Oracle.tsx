@@ -3,7 +3,7 @@ import {
   Card,
   Button,
   Timeline,
-  notification,
+  // notification,
   Space,
   Input,
   Alert,
@@ -44,24 +44,24 @@ const AGI: React.FC = () => {
    * The openNotification function is called when the user clicks the "Get Summary" button. It opens a
    * notification window with the summary of the news article
    */
-  const openNotification = (arg: string) => {
-    const key = `open${Date.now()}`;
-    const btn = (
-      <Button type="primary" danger size="small" onClick={() => notification.close(key)}>
-        Mark Read
-      </Button>
-    );
-    notification.success({
-      closeIcon: [],
-      message: 'DigitsAI Oracle answer ready',
-      description: arg,
-      placement: 'bottomRight',
-      duration: 0,
-      btn,
-      key,
-      onClose: close,
-    });
-  };
+  // const openNotification = (arg: string) => {
+  //   const key = `open${Date.now()}`;
+  //   const btn = (
+  //     <Button type="primary" danger size="small" onClick={() => notification.close(key)}>
+  //       Mark Read
+  //     </Button>
+  //   );
+  //   notification.success({
+  //     closeIcon: [],
+  //     message: 'DigitsAI Oracle answer ready',
+  //     description: arg,
+  //     placement: 'bottomRight',
+  //     duration: 0,
+  //     btn,
+  //     key,
+  //     onClose: close,
+  //   });
+  // };
   /**
    * It takes a query, sets the loading state to true, then calls the summarize function from the
    * backend, and sets the summary state to the response from the backend
@@ -84,7 +84,7 @@ const AGI: React.FC = () => {
         const _ = agiRes.data.answer;
         setConversation([...conversation, query, _]);
         if (_) {
-          openNotification(_);
+          // openNotification(_);
         } else {
           setError('Bad question format, or can be a result of a processing problem!');
         }
