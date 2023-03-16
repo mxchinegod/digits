@@ -43,7 +43,7 @@
   ],
   "dependencies": {
     "@amcharts/amcharts4": "4.10.30",
-    "@ant-design/icons": "^4.8.0",
+    "@ant-design/icons": "^5.0.1",
     "@ant-design/plots": "^1.2.2",
     "@ant-design/pro-components": "^2.3.35",
     "@ant-design/pro-layout": "^7.5.2",
