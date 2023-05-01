@@ -1,4 +1,5 @@
 import { PageContainer } from '@ant-design/pro-components';
+import { Comment } from '@ant-design/compatible';
 import {
   Card,
   Row,
@@ -6,7 +7,6 @@ import {
   Space,
   Badge,
   Result,
-  Comment,
   Avatar,
   DatePicker,
   Input,
