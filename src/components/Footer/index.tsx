@@ -51,7 +51,19 @@ const Footer: React.FC = () => {
           },
         ]}
       />
-      <Space style={{ marginLeft: 'auto', marginRight: 'auto', paddingBottom: 10, marginTop: -15 }}>
+      <Space
+        align="center"
+        style={{
+          verticalAlign: 'middle',
+          alignItems: 'center',
+          justifyContent: 'center',
+          marginLeft: 'auto',
+          marginRight: 'auto',
+          width: '100%',
+          paddingBottom: 10,
+          marginTop: -15,
+        }}
+      >
         <Tag
           icon={
             healthStatus.type == 'success' ? (

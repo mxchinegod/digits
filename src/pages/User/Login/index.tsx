@@ -175,7 +175,14 @@ const Login: React.FC = () => {
   const { status } = userLoginState;
 
   return (
-    <div>
+    <div
+      style={{
+        backgroundImage: 'url("/invertbg.png")',
+        backgroundSize: 'cover',
+        backgroundPosition: 'center',
+        height: '100%',
+      }}
+    >
       <div data-lang>{SelectLang && <SelectLang />}</div>
       <div>
         <LoginForm

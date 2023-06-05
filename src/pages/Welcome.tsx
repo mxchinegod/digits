@@ -15,7 +15,6 @@ import {
   Modal,
   AutoComplete,
 } from 'antd';
-import type { Moment } from 'moment';
 import {
   ShareAltOutlined,
   ClockCircleOutlined,
@@ -29,8 +28,8 @@ const { Meta } = Card;
 import { everything } from '@/services/altdata/newsapi';
 import { schedule } from '@/services/altdata/reserve';
 import { summarize } from '@/services/mldata/mlapi';
-import moment from 'moment';
-moment.locale('en');
+import dayjs from 'dayjs';
+dayjs.locale('en');
 
 import React, { useLayoutEffect, useState } from 'react';
 
@@ -82,7 +81,7 @@ const Welcome: React.FC = () => {
     });
   };
 
-  const getListData = (value: Moment) => {
+  const getListData = (value: dayjs) => {
     let listData;
     events.forEach((item) => {
       if (item.month === value.format('YYYY-MM') && item.days === value.date().toString()) {
@@ -92,7 +91,7 @@ const Welcome: React.FC = () => {
     return listData || [];
   };
 
-  const dateCellRender = (value: Moment) => {
+  const dateCellRender = (value: dayjs) => {
     const listData = getListData(value);
     return (
       <ul className="events">
@@ -291,7 +290,7 @@ const Welcome: React.FC = () => {
                                 </Badge>
                                 <Badge
                                   key="articleDate"
-                                  count={moment(article.publishedAt).fromNow()}
+                                  count={dayjs(article.publishedAt).fromNow()}
                                 />
                                 <Badge
                                   key="articleIcon"
@@ -352,7 +351,7 @@ const Welcome: React.FC = () => {
         style={{ minWidth: '75%' }}
         maskClosable={false}
       >
-        <Calendar fullscreen={true} dateCellRender={dateCellRender} />
+        <Calendar fullscreen={true} cellRender={dateCellRender} />
       </Modal>
     </PageContainer>
   );
