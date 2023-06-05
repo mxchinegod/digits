@@ -1,5 +1,6 @@
 import { PageContainer } from '@ant-design/pro-components';
-import { Card, Row, Col, Space, Badge, Avatar, Comment, Tooltip } from 'antd';
+import { Comment } from '@ant-design/compatible';
+import { Card, Row, Col, Space, Badge, Avatar, Tooltip } from 'antd';
 import { QuestionCircleTwoTone } from '@ant-design/icons';
 import React, { useState, useRef, useEffect } from 'react';
 import * as am4core from '@amcharts/amcharts4/core';

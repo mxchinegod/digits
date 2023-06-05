@@ -32,7 +32,7 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
 }) => {
   if (!list || list.length === 0) {
     return (
-      <div className={styles.notFound}>
+      <div>
         <img
           src="https://gw.alipayobjects.com/zos/rmsportal/sAuJeJzSKbUmHfBQRzmZ.svg"
           alt="not found"
@@ -44,7 +44,6 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
   return (
     <div>
       <List<API.NoticeIconItem>
-        className={styles.list}
         dataSource={list}
         renderItem={(item, i) => {
           const itemCls = classNames(styles.item, {
@@ -53,9 +52,9 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
           // eslint-disable-next-line no-nested-ternary
           const leftIcon = item.avatar ? (
             typeof item.avatar === 'string' ? (
-              <Avatar className={styles.avatar} src={item.avatar} />
+              <Avatar src={item.avatar} />
             ) : (
-              <span className={styles.iconElement}>{item.avatar}</span>
+              <span>{item.avatar}</span>
             )
           ) : null;
 
@@ -67,18 +66,17 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
             >
               <List.Item className={itemCls} key={item.key || i}>
                 <List.Item.Meta
-                  className={styles.meta}
                   avatar={leftIcon}
                   title={
-                    <div className={styles.title}>
+                    <div>
                       {item.title}
-                      <div className={styles.extra}>{item.extra}</div>
+                      <div>{item.extra}</div>
                     </div>
                   }
                   description={
                     <div>
-                      <div className={styles.description}>{item.description}</div>
-                      <div className={styles.datetime}>{item.datetime}</div>
+                      <div>{item.description}</div>
+                      <div>{item.datetime}</div>
                     </div>
                   }
                 />
@@ -87,7 +85,7 @@ const NoticeList: React.FC<NoticeIconTabProps> = ({
           );
         }}
       />
-      <div className={styles.bottomBar}>
+      <div>
         {showClear ? (
           <div onClick={onClear}>
             {clearText} {title}

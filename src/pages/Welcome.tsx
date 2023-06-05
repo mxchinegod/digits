@@ -85,7 +85,7 @@ const Welcome: React.FC = () => {
   const getListData = (value: Moment) => {
     let listData;
     events.forEach((item) => {
-      if (item['month'] === value.format('YYYY-MM') && item['days'] === value.date().toString()) {
+      if (item.month === value.format('YYYY-MM') && item.days === value.date().toString()) {
         listData = [item];
       }
     });
@@ -97,10 +97,10 @@ const Welcome: React.FC = () => {
     return (
       <ul className="events">
         {listData.map((item) => (
-          <li key={item['title']}>
+          <li key={item.title}>
             <Badge />
             <small>
-              {item['title']} - {item['time']}
+              {item.title} - {item.time}
             </small>
           </li>
         ))}
@@ -143,7 +143,7 @@ const Welcome: React.FC = () => {
               article.description &&
               article.description.length > 150 &&
               article.urlToImage &&
-              article.source['name'] != 'Business Wire'
+              article.source.name != 'Business Wire'
             ) {
               allNewsContent += article.content;
             }

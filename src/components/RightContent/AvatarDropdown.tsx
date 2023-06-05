@@ -8,7 +8,7 @@ import type { MenuInfo } from 'rc-menu/lib/interface';
 import React, { useCallback } from 'react';
 import { flushSync } from 'react-dom';
 import HeaderDropdown from '../HeaderDropdown';
-import styles from './index.less';
+// import styles from './index.less'
 
 export type GlobalHeaderRightProps = {
   menu?: boolean;
@@ -52,7 +52,7 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
   );
 
   const loading = (
-    <span className={`${styles.action} ${styles.account}`}>
+    <span>
       <Spin
         size="small"
         style={{
@@ -98,15 +98,13 @@ const AvatarDropdown: React.FC<GlobalHeaderRightProps> = ({ menu }) => {
     },
   ];
 
-  const menuHeaderDropdown = (
-    <Menu className={styles.menu} selectedKeys={[]} onClick={onMenuClick} items={menuItems} />
-  );
+  const menuHeaderDropdown = <Menu selectedKeys={[]} onClick={onMenuClick} items={menuItems} />;
 
   return (
     <HeaderDropdown overlay={menuHeaderDropdown}>
-      <span className={`${styles.action} ${styles.account}`}>
-        <Avatar size="small" className={styles.avatar} src={currentUser.avatar} alt="avatar" />
-        <span className={`${styles.name} anticon`}>{currentUser.username}</span>
+      <span>
+        <Avatar size="small" src={currentUser.avatar} alt="avatar" />
+        <span>{currentUser.username}</span>
       </span>
     </HeaderDropdown>
   );

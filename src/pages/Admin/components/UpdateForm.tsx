@@ -32,7 +32,7 @@ const CreateForm: React.FC<CreateFormProps> = ({
     <Modal
       destroyOnClose
       title={!values ? 'New User' : isDetail ? 'User Details' : 'Modify User'}
-      visible={modalVisible}
+      open={modalVisible}
       onCancel={() => onCancel()}
       footer={null}
       width={840}
@@ -80,12 +80,7 @@ const CreateForm: React.FC<CreateFormProps> = ({
             },
           ]}
         />
-        <ProFormText
-          disabled={isDetail}
-          label="avatar"
-          name="avatar"
-          placeholder="image url"
-        />
+        <ProFormText disabled={isDetail} label="avatar" name="avatar" placeholder="image url" />
       </ProForm>
     </Modal>
   );
