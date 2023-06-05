@@ -5,7 +5,7 @@ import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { FormattedMessage, history, SelectLang, useIntl, useModel } from '@umijs/max';
 import { Alert, message, Tabs, Modal, Row, Col, Typography, Card, Carousel, Space } from 'antd';
 import React, { useState } from 'react';
-import styles from './index.less';
+// import styles from './index.less'
 import type { Stripe } from '@stripe/stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
 let stripePromise: Promise<Stripe | null>;
@@ -175,11 +175,9 @@ const Login: React.FC = () => {
   const { status } = userLoginState;
 
   return (
-    <div className={styles.container}>
-      <div className={styles.lang} data-lang>
-        {SelectLang && <SelectLang />}
-      </div>
-      <div className={styles.content}>
+    <div>
+      <div data-lang>{SelectLang && <SelectLang />}</div>
+      <div>
         <LoginForm
           logo={<img alt="logo" src="/digits2.gif" />}
           title={''}
@@ -217,7 +215,7 @@ const Login: React.FC = () => {
               name="username"
               fieldProps={{
                 size: 'large',
-                prefix: <UserOutlined className={styles.prefixIcon} />,
+                prefix: <UserOutlined />,
               }}
               placeholder={intl.formatMessage({
                 id: 'pages.login.username.placeholder',
@@ -239,7 +237,7 @@ const Login: React.FC = () => {
               name="password"
               fieldProps={{
                 size: 'large',
-                prefix: <LockOutlined className={styles.prefixIcon} />,
+                prefix: <LockOutlined />,
               }}
               placeholder={intl.formatMessage({
                 id: 'pages.login.password.placeholder',
@@ -283,8 +281,8 @@ const Login: React.FC = () => {
         open={isModalOpen}
         onOk={redirectToCheckout}
         confirmLoading={isLoading}
-        okText={[<ShoppingTwoTone twoToneColor="#52c41a" />, ' don&apos;t wait']}
-        cancelText={[<ClockCircleTwoTone twoToneColor="#eb2f96" />, ' wait for launch']}
+        okText={[<ShoppingTwoTone key="dontwait" twoToneColor="#52c41a" />, ' don&apos;t wait']}
+        cancelText={[<ClockCircleTwoTone key="wait" twoToneColor="#eb2f96" />, ' wait for launch']}
         onCancel={handleCancel}
       >
         <Row gutter={16}>
@@ -295,7 +293,7 @@ const Login: React.FC = () => {
               We can promise the tools herein will be what you&apos;ve heard/seen, but there may be
               small 🐛s and glitches while we work on improving the service toward our official 🚀
             </Card>
-            <Space direction="vertical" size="middle" style={{ display: 'flex' }}></Space>
+            <Space direction="vertical" size="middle" style={{ display: 'flex' }} />
             <center>
               <Typography.Title level={4}>
                 &quot;Okay 👌🏽 What&apos;s available today?&quot;
@@ -392,7 +390,7 @@ const Login: React.FC = () => {
             },
           ]}
         />
-        <br></br>
+        <br />
         <Typography.Text disabled>
           <small>* early adopters only, launch price TBD</small>
         </Typography.Text>

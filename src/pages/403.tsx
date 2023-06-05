@@ -6,7 +6,7 @@ const NoFoundPage: React.FC = () => (
   <Result
     status="403"
     title="403"
-    subTitle="Sorry, the page you visited does not exist."
+    subTitle="Sorry, you do not have access to this page."
     extra={
       <Button type="primary" onClick={() => history.push('/')}>
         Back Home

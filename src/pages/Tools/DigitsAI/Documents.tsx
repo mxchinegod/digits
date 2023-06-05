@@ -23,7 +23,7 @@ import moment from 'moment';
 moment.locale('en');
 import React, { useState } from 'react';
 import type { CheckboxValueType } from 'antd/es/checkbox/Group';
-import { CheckboxChangeEvent } from 'antd/lib/checkbox';
+import type { CheckboxChangeEvent } from 'antd/lib/checkbox';
 
 /**
  * 每个单独的卡片，为了复用样式抽成了组件
@@ -94,7 +94,7 @@ const Documents: React.FC = () => {
             onClick={() => getSentiment(text)}
             size="small"
             icon={<HighlightOutlined />}
-          ></Button>
+          />
         ) : (
           ''
         ),
@@ -247,12 +247,12 @@ const Documents: React.FC = () => {
                     When private banking, investment, and wealth management services publish their
                     quarterly market reports, only some of them are stored securely where the public
                     internet cannot scour for them.
-                    <br></br>
+                    <br />
                     Often these reports are geared toward individual clients to be consumed as
                     general updates regarding global macroeconomic concerns within the past fiscal
                     quarter.
-                    <br></br>
-                    <br></br>
+                    <br />
+                    <br />
                     Using these leaked documents, it is easy to pair with DigitsAI to save time
                     reading and collect a &quot;greater-than-parts&quot; understanding from several
                     premium sources.
@@ -260,7 +260,7 @@ const Documents: React.FC = () => {
                 </Row>
                 <Row>
                   <Col span={24} xl={24} lg={24} md={24} sm={24}>
-                    <br></br>
+                    <br />
                     <center>
                       <Title level={3}>
                         🔍 Source Filters{' '}
@@ -272,15 +272,11 @@ const Documents: React.FC = () => {
                           🤷
                         </Checkbox>
                       </Title>
-                      <Checkbox.Group
-                        value={checked}
-                        options={options}
-                        onChange={onChange}
-                      ></Checkbox.Group>
+                      <Checkbox.Group value={checked} options={options} onChange={onChange} />
                     </center>
                   </Col>
                 </Row>
-                <br></br>
+                <br />
                 <Row>
                   <Table
                     size="small"
@@ -315,8 +311,8 @@ const Documents: React.FC = () => {
                     Document analysis is the process of researching and making comparisons manually.
                     It can be time-consuming, but the difficulty can be low for someone with a
                     background in economics & experience in the market.
-                    <br></br>
-                    <br></br>
+                    <br />
+                    <br />
                     The amount of information we need to process is unsustainable and constantly
                     increasing. However, with advanced AI technology, we can now make powerful
                     algorithms available to everyone to process large amounts of information more
@@ -324,9 +320,9 @@ const Documents: React.FC = () => {
                   </Card>
                 </Row>
                 <Row>
-                  <Col span={24} xl={24} lg={24} md={24} sm={24}></Col>
+                  <Col span={24} xl={24} lg={24} md={24} sm={24} />
                 </Row>
-                <br></br>
+                <br />
                 <div className="site-statistic-demo-card">
                   <Row gutter={16}>
                     <Col span={8}>
@@ -374,9 +370,9 @@ const Documents: React.FC = () => {
                         />
                       </Card>
                     </Col>
-                    <br></br>
+                    <br />
                   </Row>
-                  <br></br>
+                  <br />
                   <Row
                     gutter={24}
                     style={{ padding: '25px', maxHeight: '500px', overflow: 'auto' }}

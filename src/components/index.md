@@ -248,7 +248,6 @@ RightContent 是以上几个组件的组合，同时新增了 plugins 的 `Selec
   />
   <Tooltip title="使用文档">
     <span
-      className={styles.action}
       onClick={() => {
         window.location.href = 'https://pro.ant.design/docs/getting-started';
       }}
@@ -262,6 +261,6 @@ RightContent 是以上几个组件的组合，同时新增了 plugins 的 `Selec
       <Tag color={ENVTagColor[REACT_APP_ENV]}>{REACT_APP_ENV}</Tag>
     </span>
   )}
-  <SelectLang className={styles.action} />
+  <SelectLang />
 </Space>
 ```

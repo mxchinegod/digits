@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import useMergedState from 'rc-util/es/hooks/useMergedState';
 import React from 'react';
 import HeaderDropdown from '../HeaderDropdown';
-import styles from './index.less';
+// // import styles from './index.less'
 import type { NoticeIconTabProps } from './NoticeList';
 import NoticeList from './NoticeList';
 
@@ -75,9 +75,7 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
     return (
       <>
         <Spin spinning={loading} delay={300}>
-          <Tabs className={styles.tabs} onChange={onTabChange}>
-            {panes}
-          </Tabs>
+          <Tabs onChange={onTabChange}>{panes}</Tabs>
         </Spin>
       </>
     );
@@ -91,10 +89,10 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
   });
   const noticeButtonClass = classNames(className, styles.noticeButton);
   const notificationBox = getNotificationBox();
-  const NoticeBellIcon = bell || <BellOutlined className={styles.icon} />;
+  const NoticeBellIcon = bell || <BellOutlined />;
   const trigger = (
     <span className={classNames(noticeButtonClass, { opened: visible })}>
-      <Badge count={count} style={{ boxShadow: 'none' }} className={styles.badge}>
+      <Badge count={count} style={{ boxShadow: 'none' }}>
         {NoticeBellIcon}
       </Badge>
     </span>
@@ -107,7 +105,6 @@ const NoticeIcon: React.FC<NoticeIconProps> & {
     <HeaderDropdown
       placement="bottomRight"
       menu={notificationBox}
-      overlayClassName={styles.popover}
       trigger={['click']}
       visible={visible}
       onVisibleChange={setVisible}

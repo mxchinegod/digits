@@ -4,7 +4,7 @@ import { message, Tag } from 'antd';
 import { groupBy } from 'lodash';
 import moment from 'moment';
 import { useEffect, useState } from 'react';
-import styles from './index.less';
+// import styles from './index.less'
 import NoticeIcon from './NoticeIcon';
 
 export type GlobalHeaderRightProps = {
@@ -109,7 +109,6 @@ const NoticeIconView: React.FC = () => {
 
   return (
     <NoticeIcon
-      className={styles.action}
       count={currentUser && currentUser.unreadCount}
       onItemClick={(item) => {
         changeReadState(item.id!);

@@ -13,12 +13,11 @@ import // historicalPrices,
 // financialRatios,
 '@/services/finmoddata/finmodapi';
 // import { historicalPrices } from '@/services/tdadata/tdaapi';
-import React from // useState,
-//, useRef
+import React from //, useRef // useState,
 'react';
 // import HeaderSearch from '../HeaderSearch';
 import Avatar from './AvatarDropdown';
-import styles from './index.less';
+// import styles from './index.less'
 import * as am4core from '@amcharts/amcharts4/core';
 //import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
@@ -45,10 +44,10 @@ const GlobalHeaderRight: React.FC = () => {
   }
 
   const { navTheme, layout } = initialState.settings;
-  let className = styles.right;
+  let className = 'light';
 
   if ((navTheme === 'realDark' && layout === 'top') || layout === 'mix') {
-    className = `${styles.right}  ${styles.dark}`;
+    className = `realDark`;
   }
 
   // const createHistoricalPricesChart = async () => {
@@ -227,7 +226,6 @@ const GlobalHeaderRight: React.FC = () => {
         }}
       /> */}
       <span
-        className={styles.action}
         onClick={() => {
           window.open('https://github.com/DylanAlloy/digits/issues');
         }}
@@ -235,7 +233,7 @@ const GlobalHeaderRight: React.FC = () => {
         <QuestionCircleOutlined />
       </span>
       <Avatar />
-      <SelectLang className={styles.action} />
+      <SelectLang />
       {/* <Modal
         title={processing ? processing : 'Loading'}
         centered
