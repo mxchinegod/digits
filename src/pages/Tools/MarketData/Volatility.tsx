@@ -153,6 +153,7 @@ const Volatility: React.FC = () => {
           }
         } else {
           setError(true);
+          setLoading(false);
         }
       });
     } else {
