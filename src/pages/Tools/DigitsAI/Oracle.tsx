@@ -101,7 +101,7 @@ const AGI: React.FC = () => {
 
   useLayoutEffect(() => {
     if (initialState?.currentUser?.quota) {
-      setQuota(Object.values(initialState?.currentUser?.quota).length);
+      setQuota(Number(initialState?.currentUser?.quota));
     }
   }, []);
   return (
