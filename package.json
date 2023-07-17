@@ -80,7 +80,7 @@
     "cross-env": "^7.0.3",
     "cross-port-killer": "^1.4.0",
     "detect-installer": "^1.0.2",
-    "eslint": "7.32.0",
+    "eslint": "8.45.0",
     "gh-pages": "^5.0.0",
     "husky": "^7.0.4",
     "lint-staged": "^10.0.0",
