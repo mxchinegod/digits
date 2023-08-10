@@ -4,7 +4,7 @@ import { LockOutlined, UserOutlined, ShoppingTwoTone, ClockCircleTwoTone } from 
 import { LoginForm, ProFormText } from '@ant-design/pro-components';
 import { FormattedMessage, history, SelectLang, useIntl, useModel } from '@umijs/max';
 import { Alert, message, Tabs, Modal, Row, Col, Typography, Card, Carousel, Space } from 'antd';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 // import styles from './index.less'
 import type { Stripe } from '@stripe/stripe-js';
 import { loadStripe } from '@stripe/stripe-js';
@@ -90,7 +90,16 @@ const Login: React.FC = () => {
   const [stripeError, setStripeError] = useState(null);
   const [isLoading, setLoading] = useState(false);
   const [product, setProduct] = useState('monthly');
-
+  const isAuth = async () => {
+    const userInfo = await currentUser();
+    if (userInfo.data) {
+      setInitialState((s) => ({
+        ...s,
+        currentUser: userInfo.data,
+      }));
+      history.push('/welcome');
+    }
+  };
   const item = {
     price:
       product == 'monthly' ? 'price_1M0A7kAy6KNxnnbKdGC0RfTB' : 'price_1M0A6FAy6KNxnnbKAACHuU0R',
@@ -136,23 +145,27 @@ const Login: React.FC = () => {
       const msg = await login({ ...values });
       if (msg.type === 'success') {
         localStorage.setItem('token', msg.message);
-        const userInfo = await currentUser();
-        setInitialState((s) => ({
-          ...s,
-          currentUser: userInfo?.data ?? undefined,
-        }));
+        if (localStorage.getItem('token')) {
+          const userInfo = await currentUser();
+          setInitialState((s) => ({
+            ...s,
+            currentUser: userInfo?.data ?? undefined,
+          }));
 
-        const defaultLoginSuccessMessage = intl.formatMessage({
-          id: 'pages.login.success',
-          defaultMessage: 'loginSucceeded',
-        });
-        message.success(defaultLoginSuccessMessage);
-        if (!userInfo.data.paid) {
-          showModal();
+          const defaultLoginSuccessMessage = intl.formatMessage({
+            id: 'pages.login.success',
+            defaultMessage: 'loginSucceeded',
+          });
+          message.success(defaultLoginSuccessMessage);
+          if (!userInfo.data.paid) {
+            showModal();
+          } else {
+            // URL(window.location.href).searchParams;
+            // history.push('/welcome')
+            window.location.href = '/welcome';
+            return;
+          }
         } else {
-          // URL(window.location.href).searchParams;
-          history.push('/');
-          return;
         }
       } else {
         const defaultLoginFailureMessage = intl.formatMessage({
@@ -173,7 +186,9 @@ const Login: React.FC = () => {
     }
   };
   const { status } = userLoginState;
-
+  useEffect(() => {
+    isAuth();
+  }, []);
   return (
     <div
       style={{
