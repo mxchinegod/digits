@@ -28,6 +28,8 @@ const { Meta } = Card;
 import { everything } from '@/services/altdata/newsapi';
 import { schedule } from '@/services/altdata/reserve';
 import { summarize } from '@/services/mldata/mlapi';
+import moment from 'moment';
+moment.locale('end');
 import dayjs from 'dayjs';
 dayjs.locale('en');
 
@@ -290,7 +292,7 @@ const Welcome: React.FC = () => {
                                 </Badge>
                                 <Badge
                                   key="articleDate"
-                                  count={dayjs(article.publishedAt).fromNow()}
+                                  count={moment(article.publishedAt).fromNow()}
                                 />
                                 <Badge
                                   key="articleIcon"
