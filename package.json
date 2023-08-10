@@ -1,6 +1,6 @@
 {
   "name": "digits-ui",
-  "version": "3.0.0-beta",
+  "version": "3.0.1-beta",
   "private": true,
   "description": "The most precise real-time trading analysis platform.",
   "scripts": {
