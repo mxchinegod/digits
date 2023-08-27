@@ -15,6 +15,7 @@ import {
   Modal,
   AutoComplete,
 } from 'antd';
+import type { Dayjs } from 'dayjs';
 import {
   ShareAltOutlined,
   ClockCircleOutlined,
@@ -29,7 +30,7 @@ import { everything } from '@/services/altdata/newsapi';
 import { schedule } from '@/services/altdata/reserve';
 import { summarize } from '@/services/mldata/mlapi';
 import moment from 'moment';
-moment.locale('end');
+moment.locale('en');
 import dayjs from 'dayjs';
 dayjs.locale('en');
 
@@ -83,7 +84,7 @@ const Welcome: React.FC = () => {
     });
   };
 
-  const getListData = (value: dayjs) => {
+  const getListData = (value: Dayjs) => {
     let listData;
     events.forEach((item) => {
       if (item.month === value.format('YYYY-MM') && item.days === value.date().toString()) {
@@ -93,7 +94,7 @@ const Welcome: React.FC = () => {
     return listData || [];
   };
 
-  const dateCellRender = (value: dayjs) => {
+  const dateCellRender = (value: Dayjs) => {
     const listData = getListData(value);
     return (
       <ul className="events">
