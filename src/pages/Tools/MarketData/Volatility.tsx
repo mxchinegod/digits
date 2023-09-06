@@ -8,10 +8,10 @@ import {
   Badge,
   Result,
   Avatar,
-  DatePicker,
   Input,
   Switch,
   Tooltip,
+  DatePicker,
 } from 'antd';
 import { CheckCircleOutlined, CloseCircleOutlined, QuestionCircleTwoTone } from '@ant-design/icons';
 import React, { useState } from 'react';
@@ -20,6 +20,9 @@ import * as am4charts from '@amcharts/amcharts4/charts';
 import am4themes_animated from '@amcharts/amcharts4/themes/animated';
 import { volatility } from '@/services/tdadata/tdaapi';
 import moment from 'moment';
+import { Dayjs } from 'dayjs';
+import dayjs from 'dayjs';
+
 am4core.useTheme(am4themes_animated);
 const { Search } = Input;
 
@@ -112,8 +115,8 @@ const Volatility: React.FC = () => {
     }
     createAxisAndSeries('vol', `${symbol} Strike Volatility`, true);
   };
-  const setExpiration = (val: moment.MomentInput) => {
-    const expiration = moment(val).format('YYYY-MM-DD');
+  const setExpiration = (val: Dayjs | null) => {
+    const expiration = dayjs(val).format('YYYY-MM-DD');
     setExp(expiration);
   };
   const setSym = (val: string) => {
