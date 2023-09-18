@@ -48,7 +48,7 @@
     "@ant-design/icons": "^5.2.6",
     "@ant-design/plots": "^1.2.2",
     "@ant-design/pro-components": "^2.3.35",
-    "@ant-design/pro-layout": "^7.16.7",
+    "@ant-design/pro-layout": "^7.17.2",
     "@ant-design/pro-table": "^3.2.1",
     "@stripe/stripe-js": "^1.42.1",
     "@umijs/route-utils": "^4.0.1",
