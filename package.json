@@ -73,7 +73,7 @@
     "@types/lodash": "^4.14.191",
     "@types/react": "^18.2.28",
     "@types/react-dom": "^18.2.11",
-    "@types/react-helmet": "^6.1.7",
+    "@types/react-helmet": "^6.1.8",
     "@umijs/fabric": "^2.11.1",
     "@umijs/max": "^4.0.70",
     "@umijs/openapi": "^1.8.1",
