@@ -83,7 +83,7 @@
     "eslint": "8.46.0",
     "gh-pages": "^5.0.0",
     "husky": "^7.0.4",
-    "lint-staged": "^10.0.0",
+    "lint-staged": "^15.0.2",
     "mockjs": "^1.1.0",
     "prettier": "^3.0.3",
     "swagger-ui-dist": "^4.15.5",
